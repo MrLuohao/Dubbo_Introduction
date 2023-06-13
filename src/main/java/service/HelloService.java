@@ -13,4 +13,5 @@ import com.alibaba.dubbo.config.annotation.Service;
 public interface HelloService {
 
     String sayHello(String name);
+    String sayNo();
 }

@@ -14,5 +14,10 @@
     <dubbo:registry address="zookeeper://192.168.247.128:2181"/>
     <!--    3.扫描类（将什么包下的类作为服务提供类）-->
     <dubbo:annotation package="service.Impl"/>
+    <!-- 让监控 去注册中心 自动找服务 -->
+    <dubbo:monitor protocol="registry"/>
+    <!--设置超时时间为2秒，默认为1秒(避免线程阻塞一直等下去)retries=3表示会请求次数为3，即第一次没成功再发送一次，还没成功再发送一次以此类推，一共执行3+1次（n+1）-->
+    <!--    全局设置<dubbo:provider timeout="2000" retries="3"/>-->
+    <dubbo:provider timeout="2000"/>
 </beans>
 
